@@ -23,13 +23,13 @@ rawData.head()
 rawData.isnull()
 
 print("Taille pré nettoyage :" + str(len(rawData)))
-clearData = clearData.drop_duplicates()
 clearData = rawData[(rawData["Height"].isnull() == False) & \
                     (rawData["Age"].isnull() == False) & \
                     (rawData["Weight"].isnull() == False) & \
                     (rawData["Sex"].isnull() == False) & \
                     (rawData["Sport"].isnull() == False)
                     ]
+clearData = clearData.drop_duplicates()
 print("Taille post nettoyage :" + str(len(clearData)))
 print("Il y'a donc une perte de " + str(len(rawData) - len(clearData)))
 clearData.head()
